@@ -6,38 +6,25 @@ networks:
 
 services:
 
-  §§INSTANCE-container1:
-    image: bibbox/app-image
-    container_name:  §§INSTANCE-container1
+  §§INSTANCE-training-web:
+    image: php:5.6.33-apache-jessie
+    container_name:  §§INSTANCE-training-web
     restart: unless-stopped
     networks:
       - bibbox-default-network
     links:
-      - §§INSTANCE-lapp-db:app-db
+      - §§INSTANCE-lapp-db:training-db
     ports:
       - "§§PORT1:80"
     depends_on:
-      - §§INSTANCE-app-db
-      - §§INSTANCE-app-data
+      - §§INSTANCE-training-db
+      - §§INSTANCE-training-data
     volumes_from: 
-      - §§INSTANCE-app-data
+      - §§INSTANCE-training-data
 
-§§INSTANCE-container2:
-  image: bibbox/app-image2
-  container_name:  §§INSTANCE-container2
-  restart: unless-stopped
-  networks:
-    - bibbox-default-network
-  ports:
-    - "§§PORT2:8000"
-  depends_on:
-    - §§INSTANCE-app-data
-  volumes_from: 
-    - §§INSTANCE-app-data
-
-  §§INSTANCE-app-db:
-    image: mysql:8
-    container_name: §§INSTANCE-imagename-db
+  §§INSTANCE-training-db:
+    image: mysql:5.7
+    container_name: §§INSTANCE-training-db
     restart: unless-stopped
     networks:
       - bibbox-default-network
@@ -48,13 +35,13 @@ services:
       - MYSQL_USER=§§MYSQL_DATABASE_USER
       - MYSQL_PASSWORD=§§MYSQL_DATABASE_PASSWORD
     volumes_from: 
-      - §§INSTANCE-app-data
+      - §§INSTANCE-training-data
     depends_on:
-      - §§INSTANCE-app-data
+      - §§INSTANCE-training-data
 
-  §§INSTANCE-app-data:
+  §§INSTANCE-training-data:
     image: busybox
     container_name: §§INSTANCE-app-data
     volumes:
-      - ./var/app-data:/var/app-data
-      - ./var/app-config:/var/app-config
+      - ./data/var/lib/mysql:/var/lib/mysql
+      - ./data/var/www/html/:/var/www/html/
