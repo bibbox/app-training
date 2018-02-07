@@ -1,16 +1,15 @@
 {
     "makefolders":[
-        "var/app-config",
-        "var/app-data"
+        "data/var/lib/mysql"
     ],
     "copyfiles":[
         {
-            "source":"config/database/db.conf",
-            "destination":"var/app-config/db.conf"
+            "source":"data/var/www",
+            "destination":"data/var/www"
         },
         {
-            "source":"config/app-data/db.data",
-            "destination":"var/config/app-data/db.data"
+            "source":"data/import/eb3kitlearning.sql",
+            "destination":"data/import/eb3kitlearning.sql"
         }
     ]
 }
