@@ -39,6 +39,7 @@ services:
       - MYSQL_DATABASE=eb3kitlearning
       - MYSQL_USER=eb3kitlearning
       - MYSQL_PASSWORD=tik3be4DB
+      - INSTANCE=§§INSTANCE
     volumes_from: 
       - §§INSTANCE-training-data
     depends_on:
@@ -49,6 +50,7 @@ services:
     container_name: §§INSTANCE-training-data
     volumes:
       - ./data/var/lib/mysql:/var/lib/mysql
-      - ./data/import/eb3kitlearning.sql:/docker-entrypoint-initdb.d/eb3kitlearning.sql
+      - ./data/import/updateurl.sh:/docker-entrypoint-initdb.d/01-updateurl.sh
+      - ./data/import/eb3kitlearning.sql:/docker-entrypoint-initdb.d/02-eb3kitlearning.sql
       - ./data/var/www/html/wp-content:/usr/src/wordpress/wp-content
-      - ./data/var/www/html/wp-includes:/usr/src/wordpress/wp-includes
+      - /etc/bibbox/bibbox.cfg:/docker-entrypoint-initdb.d/bibbox.cfg
