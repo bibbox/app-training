@@ -1,6 +1,7 @@
 {
     "makefolders":[
-        "data/var/lib/mysql"
+        "data/var/lib/mysql",
+		"data/import"
     ],
     "copyfiles":[
         {
