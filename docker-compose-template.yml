@@ -7,7 +7,7 @@ networks:
 services:
 
   §§INSTANCE-training-web:
-    image: php:5.6.33-apache-jessie
+    image: wordpress:4.9.3-php5.6-apache
     container_name:  §§INSTANCE-training-web
     restart: unless-stopped
     networks:
@@ -16,6 +16,11 @@ services:
       - §§INSTANCE-training-db:training-db
     ports:
       - "§§PORT1:80"
+    environment:  
+      - WORDPRESS_DB_HOST=training-db
+      - WORDPRESS_DB_USER=eb3kitlearning
+      - WORDPRESS_DB_PASSWORD=tik3be4DB
+      - WORDPRESS_DB_NAME=eb3kitlearning
     depends_on:
       - §§INSTANCE-training-db
       - §§INSTANCE-training-data
@@ -45,4 +50,5 @@ services:
     volumes:
       - ./data/var/lib/mysql:/var/lib/mysql
       - ./data/import/eb3kitlearning.sql:/docker-entrypoint-initdb.d/eb3kitlearning.sql
-      - ./data/var/www/html/:/var/www/html/
+      - ./data/var/www/html/wp-content:/usr/src/wordpress/wp-content
+      - ./data/var/www/html/wp-includes:/usr/src/wordpress/wp-includes
