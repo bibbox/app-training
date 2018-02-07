@@ -51,6 +51,6 @@ services:
     volumes:
       - ./data/var/lib/mysql:/var/lib/mysql
       - ./data/import/import.sh:/docker-entrypoint-initdb.d/import.sh
-      - ./data/import/eb3kitlearning.sql:/docker-entrypoint-initdb.d/eb3kitlearning.sql.im
+      - ./data/import/eb3kitlearning.sql:/opt/eb3kitlearning.sql
       - ./data/var/www/html/wp-content:/usr/src/wordpress/wp-content
       - /etc/bibbox/bibbox.cfg:/docker-entrypoint-initdb.d/bibbox.cfg
