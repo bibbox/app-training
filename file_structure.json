@@ -11,6 +11,10 @@
         {
             "source":"data/import/eb3kitlearning.sql",
             "destination":"data/import/eb3kitlearning.sql"
+        },
+        {
+            "source":"data/import/updateurl.sh",
+            "destination":"data/import/updateurl.sh"
         }
     ]
 }
