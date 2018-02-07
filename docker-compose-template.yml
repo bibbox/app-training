@@ -28,7 +28,8 @@ services:
       - §§INSTANCE-training-data
 
   §§INSTANCE-training-db:
-    image: bibbox/mysql-training
+    build: 
+      context: ./images/mysql-training
     container_name: §§INSTANCE-training-db
     restart: unless-stopped
     networks:
