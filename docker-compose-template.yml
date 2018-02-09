@@ -28,8 +28,7 @@ services:
       - §§INSTANCE-training-data
 
   §§INSTANCE-training-db:
-    build: 
-      context: ./images/mysql-training
+    image: mysql:5.7
     container_name: §§INSTANCE-training-db
     restart: unless-stopped
     networks:
