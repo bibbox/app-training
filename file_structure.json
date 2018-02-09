@@ -15,6 +15,10 @@
         {
             "source":"data/import/import.sh",
             "destination":"data/import/import.sh"
+        },
+        {
+            "source":"/etc/bibbox/bibbox.cfg",
+            "destination":"data/import/bibbox.cfg"
         }
     ]
 }
