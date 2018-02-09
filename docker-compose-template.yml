@@ -53,4 +53,4 @@ services:
       - ./data/import/import.sh:/docker-entrypoint-initdb.d/import.sh
       - ./data/import/eb3kitlearning.sql:/opt/eb3kitlearning.sql
       - ./data/var/www/html/wp-content:/usr/src/wordpress/wp-content
-      - ./data/import/bibbox.cfg:/opt/bibbox.cfg
+      - /etc/bibbox/bibbox.cfg:/opt/bibbox.cfg
