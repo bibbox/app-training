@@ -1,6 +1,6 @@
-# App Training BIBBOX application
+#  Training BIBBOX application
 
-This is app is a pre-configured wordpress, containing all the eB3Kit training materials.
+This App is a pre-configured wordpress, containing all the eB3Kit training materials.
 
 ## Hints
 * approx. time with medium fast internet connection: **5 minutes**
