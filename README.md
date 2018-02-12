@@ -1,4 +1,6 @@
-# LimeSurvey BIBBOX application
+# App Training BIBBOX application
+
+This is app is a pre-configured wordpress, containing all the eB3Kit training materials.
 
 ## Hints
 * approx. time with medium fast internet connection: **5 minutes**
@@ -6,7 +8,7 @@
 
 
 ## Docker Images Used
- * [BIBBOX/imagename](https://hub.docker.com/r/bibbox/imagename) 
+ * [BIBBOX/imagename](https://hub.docker.com/r/bibbox/training) 
  * [mySQL](https://hub.docker.com/_/mysql/), offical mySQL container
  * [busybox](https://hub.docker.com/_/busybox/), offical data container
  
