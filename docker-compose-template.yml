@@ -52,5 +52,5 @@ services:
       - ./data/var/lib/mysql:/var/lib/mysql
       - ./data/import/import.sh:/docker-entrypoint-initdb.d/import.sh
       - ./data/import/eb3kitlearning.sql:/opt/eb3kitlearning.sql
-      - ./data/var/www/html:/var/www/html
+      - ./data/var/www/html:/usr/src/wordpress
       - /etc/bibbox/bibbox.cfg:/opt/bibbox.cfg
