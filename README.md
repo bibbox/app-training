@@ -1,5 +1,5 @@
 #  Training BIBBOX application
-
+## IMPORTANT: This repository is deprecated and should not be used.
 This App is a pre-configured wordpress, containing all the eB3Kit training materials.
 
 ## Hints
